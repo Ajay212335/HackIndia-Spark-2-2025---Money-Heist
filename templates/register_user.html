@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <link rel="stylesheet" href="../static/uploads/register_user.css">
+</head>
+<body>
+    <div class="Register">
+        <div class="reg-user">
+            
+                <h1>Officer Register</h1>
+                <a href="./register_officer">Sign Up</a>
+            
+        </div>
+        <div class="user-container">
+            <div class="content">
+                <h1><center>User Register</center></h1>
+                <form action="/register_user" method="POST">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <p class="{{ category }}">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+                <div class="user-fon">
+                    <label>Name</label>
+                    <input type="text" class="con" name="name" placeholder="Name" required>
+                </div>
+                <div class="user-fon">
+                    <label>Mobile Number</label>
+                    <input type="text"  class="con" name="mobile" placeholder="Mobile" required>
+                </div>
+                <div class="user-fon">
+                    <label>Age</label>
+                    <input type="number" class="con" name="age" placeholder="Age" required>
+                </div>
+                <div class="user-fon">
+                    <label>Address</label>
+                    <input type="text" class="con" name="address" placeholder="Address" required>
+                </div>
+                <div class="user-fon">
+                    <label>Username</label>
+                    <input type="text" class="con" name="username" placeholder="Username" required>
+                </div>
+                <div class="user-fon">
+                    <label>Password</label>
+                    <input type="password" class="con" name="password" placeholder="Password" required>
+                </div>
+                <div class="user-fon">
+                    <label>Confirm password</label>
+                    <input type="password" class="con" name="confirm_password" placeholder="Re-enter Password" required>
+                </div>
+                <button type="submit" class="button">Register</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

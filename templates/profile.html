@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officer Profile</title>
+    <link rel="stylesheet" href="../static/uploads/profile.css">
+</head>
+<body>
+    <header>
+        <h1>Officer Profile</h1>
+        <button class="back-button" onclick="window.location.href='/officer_dashboard'">Back</button>
+    </header>
+    <div class="profile-container">
+        <h2>Profile Details</h2>
+        <p><strong>Name:</strong> {{ officer.name }}</p>
+        <p><strong>Mobile:</strong> {{ officer.mobile }}</p>
+        <p><strong>Location:</strong> {{ officer.location }}</p>
+        <p><strong>Department:</strong> {{ officer.department }}</p>
+        <p><strong>Designation:</strong> {{ officer.designation }}</p>
+        <p><strong>Username:</strong> {{ officer.username }}</p>
+    </div>
+</body>
+</html>

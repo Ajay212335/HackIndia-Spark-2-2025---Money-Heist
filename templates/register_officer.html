@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Officer Registration</title>
+    <link rel="stylesheet" href="../static/uploads/register_Officer.css"
+</head>
+<body>
+    <div class="register">
+        <div class="Officer-container">
+            <div class="Content">
+                <h1><center>Officer Register</center></h1>
+                <form action="/register_officer" method="POST">
+                    <!-- Flash messages for errors and success -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="flash-messages">
+                            {% for category, message in messages %}
+                                <p class="{{ category }}">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% endwith %}
+                    
+                    <!-- Input Fields -->
+                    <div class="Officer-fon">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="con" placeholder="Name" required>
+                    </div>
+                    <div class="Officer-fon">
+                        <label for="mobile">Mobile</label>
+                        <input type="text" name="mobile" class="con" placeholder="Mobile" required>
+                    </div>
+                    <div class="Officer-fon">
+                        <label for="location">Location</label>
+                        <input type="text" name="location" class="con" placeholder="Location" required>
+                    </div>
+                    <div class="Officer-fon">
+                        <label for="department">Department</label>
+                        <input type="text" name="department" class="con" placeholder="Department" required>
+                    </div>
+                    <div class="Officer-fon">
+                        <label for="designation">Designation</label>
+                        <input type="text" name="designation" class="con" placeholder="Designation" required>
+                    </div>
+                    <div class="Officer-fon">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="con" placeholder="Username" required>
+                    </div>
+                    <div class="Officer-fon">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="con" placeholder="Password" required>
+                    </div>
+                    <div class="Officer-fon">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" name="confirm_password" class="con" placeholder="Re-enter Password" required>
+                    </div>
+                    <button type="submit" class="button">Register</button>
+                </form>
+            </div>
+        </div>
+        <div class="Reg-Officer">
+            <h1>User Register</h1>
+            <a href="./register_user">Sign Up</a>
+        </div>
+    </div>
+</body>
+</html>

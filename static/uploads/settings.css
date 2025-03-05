@@ -1,0 +1,56 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.settings-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button.save-btn {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button.save-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dark theme overrides */
+body.dark-theme .settings-container {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-theme header {
+    background-color: #444;
+}

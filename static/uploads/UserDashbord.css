@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #EBE1E9;
+    color: #333;
+  }
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color:#FFA2B6;
+}
+
+.container{
+    padding: 40px;
+}
+.logo {
+    padding-left: 20px;
+    width: 250px; /* Adjust width as needed */
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+/* Form container styles */
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Column styling for inputs */
+.input-div {
+    width: 48%; /* Two columns, each 48% width */
+}
+
+.input-div input,
+.input-div textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.input-div textarea {
+    resize: vertical;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #FFA2B6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+

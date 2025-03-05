@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="../static/uploads/settings.css">
+    <style>
+        /* Default themes */
+        body.light-theme {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        body.dark-theme {
+            background-color: #121212;
+            color: #ffffff;
+        }
+    </style>
+    <script>
+        // Apply the theme dynamically on page load
+        window.onload = function() {
+            const theme = "{{ theme }}";
+            document.body.className = theme + "-theme";
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+        <button class="back-button" onclick="window.location.href='/officer_dashboard'">Back</button>
+    </header>
+    <div class="settings-container">
+        <h2>Theme Settings</h2>
+        <form action="/settings" method="POST">
+            <div class="form-group">
+                <label for="theme">Choose Theme:</label>
+                <select id="theme" name="theme">
+                    <option value="light" {% if theme == 'light' %}selected{% endif %}>Light</option>
+                    <option value="dark" {% if theme == 'dark' %}selected{% endif %}>Dark</option>
+                </select>
+            </div>
+            <button type="submit" class="save-btn">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

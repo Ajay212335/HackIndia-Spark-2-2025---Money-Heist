@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="../static/uploads/chatbot.css">
+</head>
+<body>
+    <header>
+        <img src="../static/uploads/LOGO.png"  class="logo">
+        <nav>
+            <a href="#">Query</a>
+            <a href="#">Profile</a>
+            <a href="#">Live Chat</a>
+            <a href="#">About Us</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="chatbox">
+            {% if response %}
+            <div class="response">
+                <div class="response-box">
+                    <p>{{ response }}</p>
+                    <a href="{{ url_for('user_dashboard') }}">
+                        <button type="button">Go to Dashboard</button>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+
+            <form method="POST">
+                <label for="user_query">Ask a question:</label>
+                <input type="text" id="user_query" name="user_query" required />
+                <button type="submit">Send</button>
+            </form>
+            
+        </div>
+    </main>
+</body>
+</html>

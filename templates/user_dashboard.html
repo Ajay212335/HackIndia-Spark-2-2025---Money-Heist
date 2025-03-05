@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../static/uploads/UserDashbord.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div class="header">
+        <img src="../static/uploads/LOGO.png"  class="logo">
+        <div class="menu">
+            <a href="/profile">Profile</a>
+            <a href="/query">Query</a>
+            <a href="/aboutus">About Us</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Welcome, {{ username }}</h1>
+        <h2>Register a Complaint</h2>
+
+
+        <form action="/user_dashboard" method="POST" enctype="multipart/form-data">
+        <div class="form-container">
+            <!-- Left column for Name, Phone, Aadhar, Address -->
+            <div class="input-div">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="text" name="phone" placeholder="Your Phone Number" required>
+                <input type="text" name="aadhar" placeholder="Aadhar Number" required>
+                <input type="text" name="address" placeholder="Your Address" required>
+                <input type="file" name="image">
+            </div>
+
+            <!-- Right column for District, Pincode, Complaint, Location, Image -->
+            <div class="input-div">
+                <input type="text" name="district" placeholder="District" required>
+                <input type="text" name="pincode" placeholder="Pincode" required>
+                <textarea name="complaint" placeholder="Complaint Details" required></textarea>
+                <input type="text" name="location" placeholder="Location" required>
+                
+            </div>
+        </div>
+
+        <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+    
+
+   
+</body>
+</html>

@@ -1,0 +1,111 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #233343;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.menu-icon {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #435a72;
+    color: white;
+}
+
+/* Container Styling */
+.container {
+    padding: 20px;
+}
+
+/* Complaint Card Styling */
+.complaint-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-card p {
+    font-size: 1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Image Styling */
+.complaint-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Footer/Logout Link Styling */
+a {
+    color: #233343;
+    text-decoration: none;
+    font-size: 1em;
+    margin-top: 20px;
+    display: block;
+}
+
+a:hover {
+    color: #17a2b8;
+}
+
+/* Other Styles for Dropdown and Menu Button */
+.menu-icon:hover {
+    color: #17a2b8;
+}
+
+/* Script for responsive menu toggle */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+}

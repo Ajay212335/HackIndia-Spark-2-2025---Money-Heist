@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #EBE1E9;
+    color: #333;
+  }
+
+.register {
+  display: flex;
+  width: 80%;
+  height: 60%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 2%;
+  margin-left: 10%;
+  
+}
+
+.register .Reg-Officer{
+  background-color: #D6536D;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+}
+
+
+.Reg-Officer a {
+    padding: 10px 20px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none ;
+}
+
+.register .Officer-container {
+  width: 60%;
+  background-color: #fff;
+}
+
+
+.Officer-container .content {
+  padding: 20px;
+}
+
+.Officer-container .Officer-fon {
+    width: 95%;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.Officer-fon .con{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.register .button {
+  background-color: #D6536D;
+  font-size: larger;
+  padding: 10px 20px;
+  width: 94%;
+  margin-left: 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  color: white;
+  margin-bottom: 10px;
+}

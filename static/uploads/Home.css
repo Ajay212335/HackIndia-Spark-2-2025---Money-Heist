@@ -1,0 +1,172 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #EBE1E9;
+    color: #333;
+  }
+  
+  .logo-image {
+    padding-left: 20px;
+    width: 250px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    background: #FFA2B6;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    animation: slideDown 1s ease-in-out;
+  }
+  
+  .navbar .logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #ff9900;
+  }
+  
+  .user-actions {
+    display: flex;
+    align-items: center;
+    font-size: large;
+  }
+  
+  .user-actions .link {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    font-size: larger;
+  }
+  
+  .user-actions .link:hover {
+    color: #000000;
+  }
+  
+  .user-actions .btn-account {
+    background-color: #D6536D;
+    color: #fff;
+    padding: 8px 15px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: larger;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .user-actions .btn-account:hover {
+    background-color: #fffcfc;
+    color: #000000;
+    transform: scale(1.1);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    margin-top: 80px;
+    padding: 60px 20px;
+    text-align: center;
+    color: #333;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .hero-section h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    animation: bounce 1.5s infinite;
+  }
+  
+  .hero-section p {
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #555;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .hero-buttons .btn-learn,
+  .hero-buttons .btn-start {
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .hero-buttons .btn-learn {
+    background-color: #232f3e;
+    color: #fff;
+  }
+  
+  .hero-buttons .btn-learn:hover {
+    background-color: #D6536D;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  .hero-buttons .btn-start {
+    background-color: #D6536D;
+    color: #fff;
+  }
+  
+  .hero-buttons .btn-start:hover {
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  .hero-Function {
+    width: 100%;
+    align-content: right;
+  }
+  
+  .hero-Function p {
+    font-size: larger;
+  }
+  
+  /* Animations */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  

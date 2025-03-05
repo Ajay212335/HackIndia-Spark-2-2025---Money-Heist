@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkblue;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Upload Image for Classification</h2>
+        <input type="file" id="imageInput">
+        <button onclick="uploadImage()">Upload</button>
+        
+        <div class="result" id="resultContainer"></div>
+    </div>
+
+    <script>
+        function uploadImage() {
+            let input = document.getElementById("imageInput");
+            if (!input.files.length) {
+                alert("Please select a file first!");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", input.files[0]);
+
+            fetch("http://127.0.0.1:5000/upload", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                let resultContainer = document.getElementById("resultContainer");
+                resultContainer.innerHTML = `
+                    <h3>Prediction: ${data.prediction}</h3>
+                    <p>Confidence: ${data.confidence}</p>
+                    <h4>All Predictions:</h4>
+                    <ul>
+                        ${Object.entries(data.all_predictions).map(([key, value]) => 
+                            `<li>${key}: ${value.toFixed(2)}%</li>`).join('')}
+                    </ul>
+                `;
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+
+</body>
+</html>

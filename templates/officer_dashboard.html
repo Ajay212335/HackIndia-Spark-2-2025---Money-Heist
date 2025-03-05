@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officer Dashboard</title>
+    <link rel="stylesheet" href="../static/uploads/officerdashboard.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <header>
+        <header>
+            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+            <h1>Officer Dashboard</h1>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/profile">Profile</a>
+                <a href="/settings">Settings</a>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </header>
+        
+
+    <div class="container">
+        <h1>Complaints List</h1>
+        {% for complaint in complaints %}
+        <div class="complaint-card">
+            <p><strong>User:</strong> {{ complaint['username'] }}</p>
+            <p><strong>Name:</strong> {{ complaint['name'] }}</p>
+            <p><strong>Phone:</strong> {{ complaint['phone'] }}</p>
+            <p><strong>Aadhar:</strong> {{ complaint['aadhar'] }}</p>
+            <p><strong>Address:</strong> {{ complaint['address'] }}</p>
+            <p><strong>District:</strong> {{ complaint['district'] }}</p>
+            <p><strong>Pincode:</strong> {{ complaint['pincode'] }}</p>
+            <p><strong>Complaint:</strong> {{ complaint['complaint'] }}</p>
+            <p><strong>Location:</strong> {{ complaint['location'] }}</p>
+
+            {% if 'image' in complaint %}
+            <div class="complaint-image">
+                <img 
+                    src="{{ url_for('static', filename='uploads/' + complaint['image']) }}" 
+                    width="200" 
+                    alt="Complaint Image"
+                    onclick="showImageModal(this.src)"
+                    style="cursor: pointer;"
+                >
+                <div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;">
+                    <span style="position: absolute; top: 10px; right: 20px; font-size: 30px; color: white; cursor: pointer;" onclick="closeImageModal()">×</span>
+                    <img id="modalImage" style="max-width: 90%; max-height: 90%; border-radius: 8px;">
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+
+    <!-- Profile Section -->
+    <div id="profile" style="display: none;">
+        <h2>Officer Profile</h2>
+        <p><strong>Name:</strong> {{ officer.name }}</p>
+        <p><strong>Mobile:</strong> {{ officer.mobile }}</p>
+        <p><strong>Location:</strong> {{ officer.location }}</p>
+        <p><strong>Department:</strong> {{ officer.department }}</p>
+        <p><strong>Designation:</strong> {{ officer.designation }}</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('dropdownMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function showProfile() {
+            var profile = document.getElementById('profile');
+            profile.style.display = 'block';
+        }
+
+        function logout() {
+            window.location.href = '/logout'; // Redirect to logout route
+        }
+
+        function showImageModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = src;
+            modal.style.display = 'flex';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
